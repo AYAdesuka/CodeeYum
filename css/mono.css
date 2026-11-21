@@ -1,0 +1,6 @@
+/* Подключается только на страницах с $mono = true (index.php) */
+.font-jb,
+.font-jb .btn,
+.font-jb .form-control {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
