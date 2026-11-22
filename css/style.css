@@ -1,0 +1,250 @@
+/* ---------- база ---------- */
+html { scrollbar-color: var(--t-scroll-thumb) transparent; }
+    
+body { font-family: var(--font-ui); } /* фон и цвет текста задаёт theme.css */
+h1, h2, h3, h4 { font-weight: 700; letter-spacing: -.02em; }
+
+::selection { background: var(--t-selection); color: var(--t-hdr-text); }
+a { color: var(--t-brand); }
+a:hover { color: var(--t-field-hover); }
+hr { border-color: var(--t-border-strong); opacity: 1; }
+img { outline: 1px solid var(--t-img-outline); outline-offset: -1px; }
+.text-muted, .text-body-secondary, small { color: var(--t-text-muted) !important; }
+code { color: var(--t-orange); }
+pre { background: var(--t-bg-deep); color: var(--t-text); border: 1px solid var(--t-border-subtle); padding: 1rem; border-radius: .5rem; }
+
+/* ---------- каркас сайта ---------- */
+.site-header {
+  background: var(--t-hdr-surface);
+  color: var(--t-hdr-text);
+  border-bottom: 1px solid var(--t-border-strong);
+}
+.site-header .brand { color: var(--t-hdr-brand); font-weight: 700; text-decoration: none; }
+.site-header .brand:hover { color: var(--t-field-crest); }
+.site-nav { display: flex; flex-wrap: wrap; gap: .25rem; margin: 0; padding: 0; list-style: none; }
+.site-nav a {
+  display: block;
+  padding: .4rem .8rem;
+  border-radius: .4rem;
+  color: var(--t-hdr-text-2);
+  text-decoration: none;
+}
+.site-nav a:hover { background: var(--t-hdr-surface-2); color: var(--t-hdr-text); }
+.site-nav a.active { background: var(--t-hdr-ink); color: var(--t-hdr-brand); }
+
+.site-main { min-height: 70vh; }
+.site-footer {
+  background: var(--t-bg-deep);
+  color: var(--t-text-muted);
+  border-top: 1px solid var(--t-border-subtle);
+}
+
+/* ---------- поверхности ---------- */
+.card, .list-group-item, .dropdown-menu, .modal-content, .accordion-item, .popover, .toast {
+  background: var(--t-surface);
+  color: var(--t-text);
+  border-color: var(--t-border-subtle);
+}
+.card { box-shadow: var(--t-elevation); transition: box-shadow .15s; }
+.card:hover { box-shadow: var(--t-elevation-hover); }
+.card-header, .card-footer, .modal-header, .modal-footer {
+  background: var(--t-surface-2);
+  border-color: var(--t-border-subtle);
+  color: var(--t-text);
+}
+.dropdown-item { color: var(--t-text); }
+.dropdown-item:hover, .dropdown-item:focus { background: var(--t-surface-2); color: var(--t-hdr-text); }
+.list-group-item.active { background: var(--t-brand-soft); color: var(--t-brand); border-color: var(--t-brand); }
+
+/* ---------- кнопки (v5: .btn-primary, v6: .btn-solid.theme-primary) ---------- */
+.btn-primary, .btn-solid.theme-primary {
+  background: var(--t-brand);
+  border-color: var(--t-brand);
+  color: var(--t-brand-ink);
+}
+.btn-primary:hover, .btn-solid.theme-primary:hover {
+  background: var(--t-field-hover);
+  border-color: var(--t-field-hover);
+  color: var(--t-brand-ink);
+}
+.btn-primary:active, .btn-solid.theme-primary:active {
+  background: var(--t-field-crest);
+  border-color: var(--t-field-crest);
+}
+.btn-outline-primary {
+  color: var(--t-brand);
+  border-color: var(--t-brand);
+  background: transparent;
+}
+.btn-outline-primary:hover { background: var(--t-brand-soft); color: var(--t-field-hover); border-color: var(--t-field-hover); }
+.btn-secondary { background: var(--t-surface-2); border-color: var(--t-border-strong); color: var(--t-text); }
+.btn-secondary:hover { background: var(--t-border-strong); color: var(--t-hdr-text); }
+:focus-visible { outline: 2px solid var(--t-brand); outline-offset: 2px; }
+
+/* ---------- формы (в v6 select = .form-control) ---------- */
+.form-control, .form-select, .input-group-text {
+  background-color: var(--t-field-bg);
+  color: var(--t-text);
+  border: 1px solid var(--t-border-strong);
+}
+.form-control::placeholder { color: var(--t-text-muted); opacity: .7; }
+.form-control:focus, .form-select:focus {
+  background-color: var(--t-field-bg);
+  color: var(--t-text);
+  border-color: var(--t-brand);
+  box-shadow: 0 0 0 .2rem var(--t-brand-soft);
+}
+.form-control:disabled { background: var(--t-surface); color: var(--t-text-muted); }
+.form-label { color: var(--t-text-secondary); }
+
+/* ---------- таблицы ---------- */
+.table {
+  color: var(--t-text);
+  border-color: var(--t-border-subtle);
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--t-text);
+  --bs-table-striped-bg: var(--t-surface);
+  --bs-table-hover-bg: var(--t-surface-2);
+  --bs-table-border-color: var(--t-border-subtle);
+}
+.table > :not(caption) > * > * { background-color: transparent; color: inherit; }
+.table-striped > tbody > tr:nth-of-type(odd) > * { background-color: var(--t-surface); }
+.table-hover > tbody > tr:hover > * { background-color: var(--t-surface-2); }
+
+/* ---------- alert / badge ---------- */
+.alert { border: 1px solid var(--t-border-strong); background: var(--t-surface); color: var(--t-text); }
+.alert-success { border-color: var(--t-green); }
+.alert-danger  { border-color: var(--t-red); }
+.alert-warning { border-color: var(--t-yellow); }
+.alert-info    { border-color: var(--t-aqua); }
+.badge { background: var(--t-brand-soft); color: var(--t-brand); }
+
+/* ---------- пагинация / табы ---------- */
+.page-link { background: var(--t-surface); border-color: var(--t-border-subtle); color: var(--t-brand); }
+.page-link:hover { background: var(--t-surface-2); color: var(--t-field-hover); }
+.page-item.active .page-link { background: var(--t-brand); border-color: var(--t-brand); color: var(--t-brand-ink); }
+.nav-tabs { border-color: var(--t-border-strong); }
+.nav-link { color: var(--t-text-secondary); }
+.nav-link.active { color: var(--t-brand); }
+
+/* ---------- скроллбар (webkit) ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--t-scroll-thumb); border-radius: 6px; }
+
+/* =========================================================
+   Главная страница тренажёра (index.php). Цвета только из токенов theme.css.
+   Своя сетка/кнопки/карточки cy-*, от Bootstrap нужен лишь .container
+   ========================================================= */
+.font-mono, code, pre, kbd, samp { font-family: var(--font-mono); }
+
+/* Главная тренажёра. Цвета берутся из токенов темы (--t-*), после запятой — запасные значения.
+   Классы cy-* не пересекаются с Bootstrap, от него нужен только .container. */
+
+
+
+.font-mono, code, pre, kbd, samp { font-family: var(--font-mono); }
+
+.cy-page { font-family: var(--font-ui); }
+.cy-page, .cy-page *, .cy-page *::before, .cy-page *::after { box-sizing: border-box; }
+.cy-page h1, .cy-page h2, .cy-page h3, .cy-page h4 { font-weight: 700; letter-spacing: -.02em; margin: 0; color: var(--t-hdr-text); }
+.cy-page p { margin: 0; }
+
+/* ---------- кнопки ---------- */
+.cy-btn { display: inline-block; font: 600 .95rem var(--font-ui); text-decoration: none; cursor: pointer;
+  padding: .7rem 1.3rem; border-radius: .6rem; border: 1px solid var(--t-brand);
+  background: var(--t-brand); color: var(--t-brand-ink); transition: background .15s, border-color .15s, color .15s; }
+.cy-btn:hover { background: var(--t-field-hover); border-color: var(--t-field-hover); color: var(--t-brand-ink); }
+.cy-btn--ghost { background: transparent; color: var(--t-brand); }
+.cy-btn--ghost:hover { background: var(--t-brand-soft); color: var(--t-field-hover); border-color: var(--t-field-hover); }
+.cy-btn--sm { padding: .45rem .9rem; font-size: .85rem; }
+.cy-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* ---------- hero ---------- */
+.cy-hero { display: grid; gap: 3rem; align-items: center; padding: 1rem 0 4rem; }
+.cy-eyebrow { display: inline-block; font: .8rem var(--font-mono); color: var(--t-brand);
+  background: var(--t-brand-soft); padding: .3rem .75rem; border-radius: 999px; margin-bottom: 1.1rem; }
+.cy-hero h1 { font-size: clamp(2.1rem, 5vw, 3.5rem); line-height: 1.08; }
+.cy-hl { color: var(--t-brand); }
+.cy-lead { color: var(--t-text-muted); max-width: 34rem; font-size: 1.1rem; margin: 1rem 0 1.6rem !important; line-height: 1.6; }
+
+/* окно редактора */
+.cy-editor { background: var(--t-bg-deep); border: 1px solid var(--t-border-strong); border-radius: 1rem; overflow: hidden;
+  box-shadow: 0 24px 60px -28px rgba(0,0,0,.8); }
+.cy-editor__bar { display: flex; align-items: center; gap: .4rem; padding: .7rem 1rem; border-bottom: 1px solid var(--t-border-subtle); }
+.cy-editor__bar i { width: .7rem; height: .7rem; border-radius: 50%; display: block; background: var(--t-border-strong); }
+.cy-editor__bar i:nth-child(1) { background: var(--t-red); }
+.cy-editor__bar i:nth-child(2) { background: var(--t-yellow); }
+.cy-editor__bar i:nth-child(3) { background: var(--t-green); }
+.cy-editor__bar span { margin-left: auto; font: .75rem var(--font-mono); color: var(--t-text-muted); }
+.cy-editor pre { margin: 0; padding: 1.1rem 1.2rem; border: 0; border-radius: 0; background: none; color: var(--t-text);
+  font-size: .88rem; line-height: 1.7; white-space: pre-wrap; }
+.cy-kw  { color: var(--t-red); }
+.cy-fn  { color: var(--t-yellow); }
+.cy-st  { color: var(--t-green); }
+.cy-dim { color: var(--t-text-muted); }
+.cy-result { border-top: 1px solid var(--t-border-subtle); padding: .9rem 1.2rem; font: .85rem var(--font-mono); color: var(--t-text); }
+.cy-ok { color: var(--t-green); font-weight: 700; }
+.cy-result table { width: 100%; margin-top: .5rem; border-collapse: collapse; }
+.cy-result th, .cy-result td { padding: .25rem .8rem .25rem 0; text-align: left; border: 0; background: none; color: inherit; }
+.cy-result th { color: var(--t-text-muted); font-weight: 500; }
+
+/* ---------- статистика ---------- */
+.cy-stats { display: grid; grid-template-columns: repeat(2, 1fr); border-block: 1px solid var(--t-border-strong); text-align: center; }
+.cy-stat { padding: 1.6rem .5rem; }
+.cy-stat b { display: block; font: 700 1.9rem var(--font-mono); color: var(--t-brand); }
+.cy-stat span { color: var(--t-text-muted); font-size: .9rem; }
+
+/* ---------- секции и карточки ---------- */
+.cy-section { padding: 4rem 0 0; }
+.cy-title { font-size: 1.8rem; margin-bottom: .4rem !important; }
+.cy-sub { color: var(--t-text-muted); margin-bottom: 1.8rem !important; }
+.cy-grid { display: grid; gap: 1.25rem; }
+
+.cy-card { background: var(--t-surface); border: 1px solid var(--t-border-subtle); border-radius: 1rem; padding: 1.6rem;
+  box-shadow: var(--t-elevation); }
+.cy-hover { transition: transform .15s ease, border-color .15s ease; }
+.cy-hover:hover { transform: translateY(-3px); border-color: var(--c, var(--t-brand)); }
+
+.cy-track { border-top: 4px solid var(--c); }
+.cy-track--sql { --c: var(--t-aqua); } .cy-track--php { --c: var(--t-purple); }
+.cy-track h3 { font-size: 1.35rem; display: flex; align-items: center; gap: .6rem; }
+.cy-track code { font-size: .78rem; font-weight: 500; color: var(--c); background: var(--t-surface-2);
+  padding: .2rem .5rem; border-radius: .4rem; }
+.cy-track ul { list-style: none; padding: 0; margin: 1rem 0 1.3rem; }
+.cy-track li { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .6rem 0; border-bottom: 1px dashed var(--t-border-strong); }
+.cy-track li:last-child { border-bottom: 0; }
+.cy-lvl { font: .75rem var(--font-mono); color: var(--t-text-muted); white-space: nowrap; }
+
+.cy-step .n { font: 700 .85rem var(--font-mono); color: var(--t-brand-ink); background: var(--t-brand);
+  width: 2rem; height: 2rem; border-radius: .55rem; display: grid; place-items: center; margin-bottom: .9rem; }
+.cy-step h4 { font-size: 1.05rem; margin-bottom: .35rem !important; }
+.cy-step p { color: var(--t-text-muted); font-size: .95rem; line-height: 1.5; }
+
+/* ---------- форма, алерты, таблица ---------- */
+.cy-card h3 { font-size: 1.15rem; margin-bottom: 1.1rem !important; }
+.cy-field { margin-bottom: 1rem; }
+.cy-field label { display: block; font-weight: 500; margin-bottom: .35rem; color: var(--t-text-secondary, var(--t-text)); }
+.cy-input { width: 100%; font: 1rem var(--font-ui); color: var(--t-text); padding: .7rem .9rem; border-radius: .6rem;
+  background: var(--t-field-bg); border: 1px solid var(--t-border-strong); }
+.cy-input::placeholder { color: var(--t-text-muted); opacity: .7; }
+.cy-input:focus { outline: none; border-color: var(--t-brand); box-shadow: 0 0 0 .2rem var(--t-brand-soft); }
+.cy-alert { padding: .75rem 1rem; border-radius: .6rem; margin-bottom: 1rem; border: 1px solid var(--t-border-strong); background: var(--t-surface-2); color: var(--t-text); }
+.cy-alert--ok  { border-color: var(--t-green); }
+.cy-alert--err { border-color: var(--t-red); }
+
+.cy-table { width: 100%; border-collapse: collapse; background: none; color: var(--t-text); }
+.cy-table th, .cy-table td { padding: .8rem 1rem; text-align: left; border: 0; border-bottom: 1px solid var(--t-border-subtle); background: none; color: inherit; box-shadow: none; }
+.cy-table th { color: var(--t-text-muted); font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
+.cy-table tbody tr:hover td { background: var(--t-surface-2); }
+
+/* ---------- адаптив ---------- */
+@media (min-width: 768px) {
+  .cy-stats { grid-template-columns: repeat(4, 1fr); }
+  .cy-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .cy-grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .cy-hero { grid-template-columns: 1fr 1fr; }
+  .cy-grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .cy-hover { transition: none; } }

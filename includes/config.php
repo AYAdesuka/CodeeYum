@@ -9,7 +9,6 @@ const BASE_URL = '/ya/CodeeYum';
 const BS_CSS    = BASE_URL . '/css/bootstrap/bootstrap.css';
 const BS_JS     = BASE_URL . '/js/bootstrap/bootstrap.js';
 const THEME_CSS = BASE_URL . '/css/theme.css';
-const MONO_CSS  = BASE_URL . '/css/mono.css';
 
 // Пункты меню: путь => подпись
 const NAV = [
