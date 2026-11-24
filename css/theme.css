@@ -1,16 +1,15 @@
 /* =========================================================
-   Gruvbox theme for Bootstrap 6 (alpha)
+   Gruvbox theme for Bootstrap 6 (alpha) — тёмная
    Подключать ПОСЛЕ bootstrap.css.
-   Файл без @layer -> в CSS незаложенные стили всегда сильнее
-   заложенных, а Bootstrap 6 как раз использует @layer,
-   поэтому перебивать его через !important не нужно.
+   Файл без @layer -> его стили сильнее слоёв Bootstrap 6,
+   поэтому !important не нужен.
    ========================================================= */
 
-:root{
-
+:root,
 [data-bs-theme="dark"] {
   --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, "Courier New", monospace;
+
   --t-bg-deep: #1e1e1e;
   --t-bg: #282828;
   --t-surface: #32302f;
@@ -51,8 +50,7 @@
 
   color-scheme: dark;
 
-  /* Подстраховка: если Bootstrap 6 сохранил --bs-* имена, они подхватят тему.
-     Если нет — всё равно работают явные правила ниже. */
+  /* если Bootstrap 6 сохранил --bs-* имена, они подхватят тему */
   --bs-body-bg: var(--t-bg);
   --bs-body-color: var(--t-text);
   --bs-secondary-color: var(--t-text-muted);
@@ -60,8 +58,13 @@
   --bs-primary: var(--t-brand);
   --bs-link-color: var(--t-brand);
   --bs-link-hover-color: var(--t-field-hover);
-
-
-}
 }
 
+/* Фон страницы #282828. html[...] сильнее родных стилей Bootstrap,
+   поэтому чёрный фон больше не просвечивает. */
+html,
+html[data-bs-theme="dark"],
+html[data-bs-theme="dark"] body {
+  background: var(--t-bg);
+  color: var(--t-text);
+}
