@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <section class="cy-hero">
   <div>
     <span class="cy-eyebrow">&gt; практика, а не теория</span>
-    <h1>Учись писать <span class="cy-hl">SQL</span> и <span class="cy-hl">PHP</span> руками</h1>
+    <h1 class="heading">Учись писать <span class="cy-hl">SQL</span> и <span class="cy-hl">PHP</span> руками</h1>
     <p class="cy-lead">Решай задания прямо в браузере. Тренажёр сразу проверяет код, показывает ошибки и считает баллы.</p>
     <div class="cy-row">
       <a class="cy-btn" href="<?= e(BASE_URL) ?>/tasks.php">Начать решать</a>

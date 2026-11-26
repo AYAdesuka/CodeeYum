@@ -142,7 +142,9 @@ pre { background: var(--t-bg-deep); color: var(--t-text); border: 1px solid var(
 
 
 
-.font-mono, code, pre, kbd, samp { font-family: var(--font-mono); }
+.font-mono, code, pre, kbd, samp { 
+  font-family: var(--JetBrainsMono-Regular); 
+}
 
 .cy-page { font-family: var(--font-ui); }
 .cy-page, .cy-page *, .cy-page *::before, .cy-page *::after { box-sizing: border-box; }

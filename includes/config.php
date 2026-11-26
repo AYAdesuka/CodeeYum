@@ -1,11 +1,15 @@
 <?php
 // includes/config.php — единая точка настроек. Подключай первым в каждой странице.
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 declare(strict_types=1);
 
 const SITE_NAME = 'CodeeYum';
 
-const BASE_URL = '/ya/CodeeYum';
+const BASE_URL = '/ya/CodeeYum-main';
 const BS_CSS    = BASE_URL . '/css/bootstrap/bootstrap.css';
 const BS_JS     = BASE_URL . '/js/bootstrap/bootstrap.js';
 const THEME_CSS = BASE_URL . '/css/theme.css';

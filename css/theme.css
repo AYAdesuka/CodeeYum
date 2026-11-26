@@ -7,8 +7,9 @@
 
 :root,
 [data-bs-theme="dark"] {
+
   --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, "Courier New", monospace;
+  --JetBrainsMono-Regular: "JetBrainsMono-Regular", ui-monospace, "Cascadia Code", Consolas, "Courier New", monospace;
 
   --t-bg-deep: #1e1e1e;
   --t-bg: #282828;
