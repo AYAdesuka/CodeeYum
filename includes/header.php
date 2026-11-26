@@ -19,10 +19,10 @@ $css_dir   = BASE_URL . '/css/';
   <title><?= e($title) ?> — <?= SITE_NAME ?></title>
 
   <!-- порядок важен: Bootstrap -> шрифты -> переменные темы -> общие стили -> стили страницы -->
-  <link rel="stylesheet" href="<?= BS_CSS ?>">
-  <link rel="stylesheet" href="<?= $css_dir ?>fonts.css">
-  <link rel="stylesheet" href="<?= THEME_CSS ?>">
-  <link rel="stylesheet" href="<?= $css_dir ?>style.css">
+  <link rel="stylesheet" href="<?= e(BASE_URL) ?>/css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="<?= e(BASE_URL) ?>/css/fonts.css">
+  <link rel="stylesheet" href="<?= e(BASE_URL) ?>/css/theme.css">
+  <link rel="stylesheet" href="<?= e(BASE_URL) ?>/css/style.css">
   <?php foreach ($extra_css as $file): ?>
   <link rel="stylesheet" href="<?= $css_dir . e($file) ?>">
   <?php endforeach; ?>
